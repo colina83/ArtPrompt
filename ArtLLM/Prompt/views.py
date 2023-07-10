@@ -14,6 +14,7 @@ def get_openai(message):
         n=1,
         stop=None,
     )
+    
     #print(response) # Just to check the output of openai
     anwser = response.choices[0].text.strip()
     return anwser

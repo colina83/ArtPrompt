@@ -138,6 +138,7 @@
       })
         .then(response => response.json())
         .then(data => {
+          const response = data.response;
           const messageItem = document.createElement('li');
           messageItem.classList.add('message', 'received');
           messageItem.innerHTML = `

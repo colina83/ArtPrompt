@@ -1,12 +1,10 @@
 import openai
 import json
+import os
 
-config_file_path = 'C:/Users/Francisco.Colina/Documents/Code/ArtPrompt/ArtLLM/Prompt/config.json'
-
-with open(config_file_path) as f:
-    config = json.load(f)
-
-openai.api_key = config['OPENAI_API_KEY']
+from dotenv import load_dotenv, find_dotenv
+_ = load_dotenv(find_dotenv()) # read local .env file
+openai.api_key = os.environ['OPENAI_API_KEY']
 
 def get_openai(message):
     response = openai.Completion.create(
